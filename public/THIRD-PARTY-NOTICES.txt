@@ -1,0 +1,17 @@
+Andante uses MediaPipe Tasks Vision 1.1.0 and its corresponding WASM runtime.
+Copyright The MediaPipe Authors. Licensed under Apache License 2.0.
+The full license is included in MEDIAPIPE-LICENSE.txt.
+
+Hand Landmarker model: float16, version 1, official MediaPipe distribution.
+Source: https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task
+SHA-256: fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1
+Project and attribution: https://github.com/google-ai-edge/mediapipe
+
+MediaPipe's distribution includes third-party components with their original
+copyright and license notices retained in the distributed JavaScript/WASM.
+Google Closure Library: Apache-2.0; Protocol Buffers: BSD-3-Clause;
+TensorFlow Lite / XNNPACK: Apache-2.0 / BSD-3-Clause.
+
+The test-only pointing_up.jpg fixture comes from the official MediaPipe test
+assets (https://storage.googleapis.com/mediapipe-assets/pointing_up.jpg).
+It is not included in the production site.
