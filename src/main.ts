@@ -203,3 +203,9 @@ if (new URLSearchParams(location.search).has('test')) {
   Object.assign(window, { andanteTest: { control, snapshot: () => ({ x: control.x, velocity: control.velocity, target: control.target, mode, camera: !!session, animation: !!frame, handPresent, fps, inferenceHz, inferCost, quality }) } });
 }
 resumeAnimation();
+
+// Show a useful installation message if the module cannot load at all.
+document.documentElement.setAttribute("data-andante-ready", "true");
+element("boot-status").hidden = true;
+document.querySelectorAll<HTMLButtonElement | HTMLInputElement | HTMLSelectElement>("[data-startup]").forEach(control => { control.disabled = false; });
+window.dispatchEvent(new Event("andante-ready"));

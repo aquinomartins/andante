@@ -3,8 +3,10 @@
 <head><meta charset="UTF-8"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; connect-src 'self'; worker-src 'self' blob:; img-src 'self' data:; media-src 'self' blob:; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#070f18"><meta name="description" content="Uma pequena caminhada guiada pelo movimento da sua mão. Câmera processada localmente, sem gravação."><title>Andante — um gesto, um caminho</title></head>
 <body>
   <div class="app">
-    <header><a class="brand" href="./" aria-label="Andante, início"><span class="brand-mark">a.</span>andante<span class="brand-line"></span></a><span class="edition">ESTUDO INTERATIVO · Nº 01</span><button id="diagnostic-toggle" class="quiet" aria-expanded="false" aria-controls="diagnostics">Diagnóstico <span aria-hidden="true">↗</span></button></header>
+    <header><a class="brand" href="./" aria-label="Andante, início"><span class="brand-mark">a.</span>andante<span class="brand-line"></span></a><span class="edition">ESTUDO INTERATIVO · Nº 01</span><button id="diagnostic-toggle" disabled data-startup class="quiet" aria-expanded="false" aria-controls="diagnostics">Diagnóstico <span aria-hidden="true">↗</span></button></header>
     <main>
+      <div id="boot-status" class="error" role="status"><p id="boot-message">Carregando a experiência… Se o desenho e os controles não aparecerem, verifique a instalação.</p><a href="./verificar.html">Verificar instalação</a></div>
+      <noscript><p class="error">Ative JavaScript no navegador para utilizar a experiência.</p></noscript>
       <section class="stage" aria-label="Cena interativa: personagem entre duas árvores">
         <canvas id="scene" aria-label="Personagem desenhado caminhando numa noite estrelada">Seu navegador precisa oferecer Canvas 2D.</canvas>
         <div class="intro"><p class="eyebrow"><span></span> MOVIMENTO EM SUA MÃO</p><h1>Um gesto.<br>Um caminho.</h1><p class="description">Uma figura, duas árvores e você.<br>Deixe o movimento desenhar a caminhada.</p></div>
@@ -15,12 +17,13 @@
       </section>
       <section class="interaction" aria-label="Controles da experiência">
         <div class="status-block"><span class="status-dot" id="status-dot"></span><div><p id="mode">MOUSE / TOQUE</p><p id="status" role="status" aria-live="polite">Experimente livremente. Ou guie com a mão.</p></div></div>
-        <div class="primary-controls"><button id="camera" class="primary"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="3"/><path d="m16 10 5-3v10l-5-3"/></svg><span>Iniciar câmera</span></button><button id="pointer" class="secondary" aria-pressed="true">Mouse / toque</button></div>
-        <div class="tools"><label for="finger">Dedo <select id="finger"><option value="index">Indicador</option><option value="thumb">Polegar</option></select></label><button id="switch" class="tool" disabled>Trocar câmera</button><button id="preview" class="tool" aria-pressed="true" disabled>Ocultar prévia</button><button id="reset" class="tool">Reiniciar cena</button><button id="fullscreen" class="tool" hidden>Tela cheia ↗</button><label class="economy"><input id="economy" type="checkbox"> Econômico</label></div>
+        <div class="primary-controls"><button id="camera" disabled data-startup class="primary"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="3"/><path d="m16 10 5-3v10l-5-3"/></svg><span>Iniciar câmera</span></button><button id="pointer" disabled data-startup class="secondary" aria-pressed="true">Mouse / toque</button></div>
+        <div class="tools"><label for="finger">Dedo <select id="finger" disabled data-startup><option value="index">Indicador</option><option value="thumb">Polegar</option></select></label><button id="switch" class="tool" disabled>Trocar câmera</button><button id="preview" class="tool" aria-pressed="true" disabled>Ocultar prévia</button><button id="reset" disabled data-startup class="tool">Reiniciar cena</button><button id="fullscreen" class="tool" hidden>Tela cheia ↗</button><label class="economy"><input id="economy" disabled data-startup type="checkbox"> Econômico</label></div>
       </section>
       <p id="error" class="error" role="alert" hidden></p>
     </main>
     <footer><p><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v6c0 4 7 9 7 9s7-5 7-9V6Z"/><path d="m9 12 2 2 4-4"/></svg> Sua câmera fica com você. Imagens processadas no navegador, sem envio ou gravação.</p><span>DEVAGAR, MAS EM FRENTE.</span></footer>
   </div>
+  <script src="./boot.js" defer></script>
   <script type="module" src="/src/main.ts"></script>
 </body></html>
