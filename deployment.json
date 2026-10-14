@@ -1,0 +1,71 @@
+{
+  "version": "1.0.1",
+  "files": [
+    {
+      "path": "assets/index-Cj_uvfJp.js",
+      "bytes": 173805,
+      "sha256": "6f3461296fc356dbcb6138b6ae379d2d0d40c0dff760729a1786a0c8c5aaebda",
+      "kind": "js"
+    },
+    {
+      "path": "assets/index-UH03gxbd.css",
+      "bytes": 5926,
+      "sha256": "76996f99207a6fea0f09c97c5df753154dccc4c13e6292867088cd7fff3d52e8",
+      "kind": "css"
+    },
+    {
+      "path": "assets/tracking.worker-DHD01foX.js",
+      "bytes": 155019,
+      "sha256": "438a7b335715a59afe5e65c2609cebb48a4d3c3ac8b2712a98d12362c9d7ac91",
+      "kind": "js"
+    },
+    {
+      "path": "wasm/vision_wasm_internal.js",
+      "bytes": 335393,
+      "sha256": "7c652617b5bef832f42878ce8c5f752b0724bca6054e4bc1013a37d4b1949723",
+      "kind": "js"
+    },
+    {
+      "path": "wasm/vision_wasm_internal.wasm",
+      "bytes": 12997248,
+      "sha256": "782eda3ec1f414fdb4f1d66a8b59093eb4d5ab437e06117796abf05962d68eef",
+      "kind": "wasm"
+    },
+    {
+      "path": "wasm/vision_wasm_module_internal.js",
+      "bytes": 335431,
+      "sha256": "70eff3956521b7de058d7173a4935c95e4a223c26ea624b9f5a936d3a043dcb0",
+      "kind": "js"
+    },
+    {
+      "path": "wasm/vision_wasm_module_internal.wasm",
+      "bytes": 12997272,
+      "sha256": "ee03b14a878e6c3c053a1bfa62e166dc45244be54dc0bbe61c578f710b771f6a",
+      "kind": "wasm"
+    },
+    {
+      "path": "wasm/vision_wasm_nosimd_internal.js",
+      "bytes": 335196,
+      "sha256": "510fc70a170eb8b46767a7abab2af89a7a8341fa5b3ebfb8a5de41a79b7fa9df",
+      "kind": "js"
+    },
+    {
+      "path": "wasm/vision_wasm_nosimd_internal.wasm",
+      "bytes": 12168316,
+      "sha256": "b802041d105876865d6a0806f2ff7c4419a7f1b80bc01340fe36e759c2030011",
+      "kind": "wasm"
+    },
+    {
+      "path": "models/hand_landmarker.task",
+      "bytes": 7819105,
+      "sha256": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1",
+      "kind": "binary"
+    },
+    {
+      "path": "models/manifest.json",
+      "bytes": 255,
+      "sha256": "e9d1ecf400ff04fb9bc16e84a97836548972ae78700f242388c84b46996d187d",
+      "kind": "binary"
+    }
+  ]
+}
