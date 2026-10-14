@@ -1,0 +1,12 @@
+# Apache / LiteSpeed: static files required by Andante.
+<IfModule mod_mime.c>
+  AddType application/javascript .js .mjs
+  AddType text/css .css
+  AddType application/wasm .wasm
+  AddType application/octet-stream .task
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "^(index\.html|verificar\.html|deployment\.json|boot\.js|check\.js)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+  </FilesMatch>
+</IfModule>

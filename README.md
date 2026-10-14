@@ -64,3 +64,15 @@ npm run test:production
 Os testes de navegador usam Chromium instalado em `/usr/bin/chromium`; em outra máquina, defina `CHROMIUM_PATH` com o caminho do executável. O Playwright inicia Vite quando necessário. `test:stability` dura ao menos cinco minutos. `test:production` serve automaticamente o build numa subpasta em localhost para validar assets, detector e política de rede. Consulte [docs/VALIDATION.md](docs/VALIDATION.md) para resultados e limitações.
 
 A captura dos testes é **sintética**, gerada a partir de uma imagem oficial de mão do MediaPipe; a inferência e o modelo são reais. Isso verifica o pipeline, mas não comprova precisão, enquadramento ou latência de uma câmera física. Chrome/Edge em computador, Chrome Android e Safari iPhone são os alvos; precisam de validação em aparelhos reais, particularmente troca de câmera, rotação e espelhamento. Emulação de viewport não equivale a teste nesses sistemas.
+
+## Superdomínios: instalação e tela sem resposta
+
+Use o pacote **andante-site-superdominios-v2.zip**, que contém o build compilado. O ZIP de fonte do GitHub e `andante-source.zip` não devem ser extraídos diretamente no servidor como site: o `index.html` de desenvolvimento aponta para TypeScript, que a hospedagem estática não executa.
+
+Na pasta do domínio que atende `/andante/` (geralmente `public_html/andante/`), preserve uma cópia da publicação atual e substitua seus arquivos pelo conteúdo do ZIP de publicação. Não crie outra pasta `dist/` ou `andante/` dentro dela. Confira que `index.html`, `boot.js`, `check.js`, `verificar.html`, `deployment.json`, `.htaccess`, `assets/`, `wasm/` e `models/` estão no nível correto. Habilite a exibição de arquivos ocultos no gerenciador para enviar também `.htaccess`. Permissões usuais: arquivos `644`, pastas `755`.
+
+O `.htaccess` inclui tipos MIME de JavaScript, CSS, WASM e modelo para Apache/LiteSpeed e evita cache persistente de HTML e manifesto. Ele não altera configurações do domínio inteiro. Se já houver configuração personalizada nessa pasta, preserve-a antes de substituir. Se a hospedagem recusar as diretivas e passar a responder HTTP 500, desative somente esse novo `.htaccess` e peça ao suporte os tipos MIME equivalentes; não remova a configuração do restante do domínio.
+
+Abra `/andante/verificar.html` na hospedagem e clique em **Verificar arquivos**. A página distingue arquivo ausente/bloqueado, JS servido como HTML ou com MIME inválido, WASM com MIME incorreto e arquivos incompletos. O teste usa apenas cabeçalhos e não abre câmera. Após todos os itens corretos, volte à experiência e recarregue sem cache (Ctrl+Shift+R no computador).
+
+Se o JavaScript principal não carregar ou falhar antes da inicialização, a nova página informa que a experiência não iniciou e mantém os controles desabilitados, com um link para verificação. Essa orientação também aparece quando a publicação está incompleta; não é uma promessa de correção de políticas do servidor que estejam fora do pacote.
