@@ -1,0 +1,17 @@
+{
+  "subpath": "/caminhante/",
+  "worker": "CPU",
+  "simulatedCamera": true,
+  "externalAttemptsBlocked": [],
+  "errors": [],
+  "requests": [
+    "http://localhost:5175/caminhante/?test",
+    "http://localhost:5175/caminhante/assets/index-BMHwDUTO.js",
+    "http://localhost:5175/caminhante/assets/index-UH03gxbd.css",
+    "http://localhost:5175/fixture.jpg",
+    "http://localhost:5175/caminhante/assets/tracking.worker-DHD01foX.js",
+    "http://localhost:5175/caminhante/wasm/vision_wasm_module_internal.js",
+    "http://localhost:5175/caminhante/wasm/vision_wasm_module_internal.wasm",
+    "http://localhost:5175/caminhante/models/hand_landmarker.task"
+  ]
+}
