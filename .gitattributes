@@ -1,0 +1,2 @@
+# Preserve upstream assets byte-for-byte and keep generated runtime out of source reviews.
+public/wasm/** linguist-vendored=true -diff -whitespace
